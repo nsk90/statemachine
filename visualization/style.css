@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#viz {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node circle {
+  fill: #69b3a2;
+  stroke: #555;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 12px sans-serif;
+  text-anchor: middle;
+  fill: #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #555;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}

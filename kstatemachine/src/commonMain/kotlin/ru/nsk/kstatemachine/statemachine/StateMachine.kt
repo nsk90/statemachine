@@ -34,6 +34,16 @@ interface StateMachine : State {
     val logger: Logger
     val ignoredEventHandler: IgnoredEventHandler
     val pendingEventHandler: PendingEventHandler
+ fun exportStateMachineData(machine: StateMachine): String {
+    val nodes = machine.states.map { it.name }
+    val links = machine.transitions.map { "${it.fromState.name} -> ${it.toState.name}" }
+    return """
+        {
+            "nodes": [${nodes.joinToString(", ") { "\"$it\"" }}],
+            "links": [${links.joinToString(", ") { "{\"source\": \"$it.fromState\", \"target\": \"$it.toState\"}" }}]
+        }
+    """
+}
 
     /**
      * If machine catches exception from client code (listeners callbacks) it stores it until event processing

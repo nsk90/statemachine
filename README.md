@@ -211,6 +211,19 @@ fun main() = runBlocking {
 * [Complex syntax sample](./samples/src/commonMain/kotlin/ru/nsk/samples/ComplexSyntaxSample.kt)
   shows many syntax variants and library possibilities, so it looks messy
 
+
+
+## State Machine Visualization
+
+To visualize your state machine, follow these steps:
+
+1. Export your state machine data using the `exportStateMachineData` function.
+2. Save the exported data to a JSON file (e.g., `stateMachineData.json`).
+3. Open `visualization/index.html` in a web browser.
+4. Replace the sample data in `app.js` with your exported data.
+
+The interactive diagram will update to display your state machine's structure and transitions.
+
 ## 💾 Install
 
 KStateMachine is available on `Maven Central` and `JitPack` repositories.
